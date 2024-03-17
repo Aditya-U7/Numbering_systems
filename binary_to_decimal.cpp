@@ -11,7 +11,7 @@ A simple program to convert binary to equivalent decimal. It works for upto 32-b
 #include <cmath>
 
 
-unsigned int binary_to_decimal(std::string n, int ln)
+unsigned int binary_to_decimal(const std::string& n, int ln)
 {
 
 	ln = ln - 1;
