@@ -10,7 +10,7 @@ A program to convert a valid binary number given as input to an equivalent octal
 #include <map>
 
 
-void binary_to_octal(std::string n)
+void binary_to_octal(const std::string& n)
 {
 
 	std::map<std::string, std::string> bin_to_oct {{"000","0"}, {"001","1"}, {"010","2"}, {"011","3"}, {"100","4"}, {"101","5"}, {"110","6"}, {"111","7"}};
