@@ -10,7 +10,7 @@ A program to convert a valid binary number given as input to an equivalent hexad
 #include <map>
 
 
-void binary_to_hex(std::string n)
+void binary_to_hex(const std::string& n)
 {
 
 	std::map<std::string, std::string> bin_to_hex {{"0000","0"}, {"0001","1"}, {"0010","2"}, {"0011","3"}, 
