@@ -11,24 +11,24 @@ A simple program to convert binary to equivalent decimal. It works for upto 32-b
 #include <cmath>
 
 
-unsigned int binary_to_decimal(const std::string& n, int ln)
+unsigned int binary_to_decimal(std::string& bin_num, int length)
 {
 
-	ln = ln - 1;
-	unsigned int tc = ln;
-	unsigned int ansd = 0;
-
-	while (ln >= 0)
+	length -= 1;
+	int current_pos = length;
+	unsigned int dec_num = 0;
+      
+	while (current_pos >= 0)
 	{
 
-		if (n[tc - ln] == '1')
-			ansd = ansd + 1 * std::pow(2, ln);
-
-		ln--;
+		if (bin_num[length - current_pos] == '1')
+			dec_num = dec_num + 1 * std::pow(2, current_pos);
+                
+                current_pos--;
 
 	} 
 
-	return ansd;
+	return dec_num;
 }
 
 
