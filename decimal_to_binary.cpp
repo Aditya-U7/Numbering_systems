@@ -2,7 +2,7 @@
 
 Author: Aditya Upadhye
 
-A simple program to convert decimal to equivalent binary. It works for upto six digit decimal number, i.e. from 0 to 999999.
+A simple program to convert decimal to equivalent binary. It correctly works for six digits from 0 to 999999.
 
 */
 
@@ -16,19 +16,19 @@ unsigned long decimal_to_binary(unsigned long dec_num)
          
 	unsigned long bin_num = 0;
 	
-        unsigned long exponent = 0;
+        unsigned long decimal_place = 1;
         
         unsigned long tmp = 0;  
 	
-	while (dec_num > 0)
+	while (dec_num)
 	{
                 
-                tmp = ((dec_num % 2) * pow(10, exponent));
+                tmp = (dec_num % 2) * decimal_place;
 		
 		bin_num = tmp + bin_num;
-		dec_num = dec_num / 2;
+		dec_num /= 2;
 		
-                ++exponent;
+                decimal_place *= 10;
 	} 
 
 	return bin_num;
