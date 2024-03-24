@@ -8,3 +8,6 @@ binary_to_hex:
 
 ![Screenshot](bin_to_hex.png)
 
+octal_to_binary:
+
+![Screenshot](octal_to_binary.png)
