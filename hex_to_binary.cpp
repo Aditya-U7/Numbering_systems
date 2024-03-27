@@ -2,7 +2,7 @@
 
 Author: Aditya Upadhye
 
-A program to convert a valid octal number given as input to an equivalent binary number using a map.
+A program to convert a valid hexadecimal number given as input to an equivalent binary number using a map.
 
 */
 
