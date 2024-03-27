@@ -49,7 +49,7 @@ void hexadecimal_to_binary(const std::string& bin_num)
 
 				if (str == "0001")
 					hex_num = str.substr(3, 1);
-				else if (str == "0010" || str =="0011") 
+				else if (str == "0010" || str == "0011") 
 					hex_num = str.substr(2, 2);
 				else if (str == "0100" || str == "0101" || str == "0110" || str == "0111")
 				        hex_num = str.substr(1,3); 
