@@ -15,3 +15,8 @@ octal_to_binary:
 hex_to_binary:
 
 ![Screenshot](hex_to_binary.png)
+
+
+octal_to_hex:
+
+![Screenshot](octal_to_hex.png)
