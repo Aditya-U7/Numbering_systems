@@ -11,7 +11,7 @@ A simple program to convert decimal to equivalent binary. It correctly works for
 #include <cmath>
 
 
-unsigned long decimal_to_binary(unsigned long oct_num)
+unsigned long octal_to_decimal(unsigned long oct_num)
 {
          
 	unsigned long dec_num = 0;
@@ -42,7 +42,7 @@ int main()
 	std::cin >> user_input;
 
 	
-        std::cout << "To decimal: " << decimal_to_binary(user_input) << "\n\n";
+        std::cout << "To decimal: " << octal_to_decimal(user_input) << "\n\n";
 	
 	return 0;
 
