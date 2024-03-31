@@ -11,25 +11,25 @@ A program to convert a valid octal number given as input to an equivalent binary
 #include <map>
 
 
-void octal_to_binary(const std::string& bin_num)
+std::string octal_to_binary(const std::string& oct_num)
 {
 
 	std::map<std::string, std::string> oct_to_bin {{"0", "000"}, {"1", "001"}, {"2", "010"},
 		                                       {"3", "011"}, {"4", "100"}, {"5", "101"},
 	 	                                       {"6", "110"}, {"7", "111"}};
 
-	int length = bin_num.length();
+	int length = oct_num.length();
 	int cur_pos = 0;
 	bool first_iteration = true;
 
-	std::string oct_num = "";
+	std::string bin_num = "";
 	std::string str = "";
 
 	while (length)
 	{
 
 
-		str = bin_num.substr(cur_pos, 1); 
+		str = oct_num.substr(cur_pos, 1); 
 		str = oct_to_bin[str];
 		cur_pos++;
 
@@ -38,7 +38,7 @@ void octal_to_binary(const std::string& bin_num)
 			if (str == "000")
 			{
 				if (length == 1)
-					oct_num = "0";
+					bin_num = "0";
 
 			}
 			else
@@ -46,11 +46,11 @@ void octal_to_binary(const std::string& bin_num)
 				first_iteration = false;
 
 				if (str == "001")
-					oct_num = str.substr(2, 1);
+					bin_num = str.substr(2, 1);
 				else if (str == "010" || str == "011") 
-					oct_num = str.substr(1, 2);
+					bin_num = str.substr(1, 2);
 				else
-					oct_num = str;	
+					bin_num = str;	
 			}
 
 
@@ -58,14 +58,14 @@ void octal_to_binary(const std::string& bin_num)
 		else
 		{
 
-			oct_num += str;
+			bin_num += str;
 		}
 
 		--length;
 
 	}
 
-	std::cout << "\nTo Binary:  " << oct_num << "\n\n";
+	return bin_num;
 }
 
 
@@ -77,7 +77,7 @@ int main()
 	std::string user_input;
 	std::cin >> user_input;
 
-	octal_to_binary(user_input);
+	std::cout << "\nTo Binary:  " << octal_to_binary(user_input) << "\n\n";
 
 	return 0;
 }

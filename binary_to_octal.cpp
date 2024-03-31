@@ -10,7 +10,7 @@ A program to convert a valid binary number given as input to an equivalent octal
 #include <map>
 
 
-void binary_to_octal(const std::string& n)
+std::string binary_to_octal(const std::string& bin_num)
 {
 
 	std::map<std::string, std::string> bin_to_oct {{"000", "0"}, {"001", "1"}, {"010", "2"}, 
@@ -18,13 +18,13 @@ void binary_to_octal(const std::string& n)
 	                                               {"110", "6"}, {"111", "7"}};
 
 
-	std::string ans = "";
+	std::string oct_num = "";
 
-	int no_of_calls = (n.length() / 3) + (n.length() % 3 == 0? 0 : 1);
+	int no_of_calls = (bin_num.length() / 3) + (bin_num.length() % 3 == 0? 0 : 1);
 
 	int start_index = 0;
 
-	int remainder = n.length() % 3;
+	int remainder = bin_num.length() % 3;
 
 	short count = 0;
 
@@ -53,8 +53,8 @@ void binary_to_octal(const std::string& n)
 
 
 
-		tmp = tmp + n.substr(start_index, end_index);
-		ans = ans + bin_to_oct[tmp];
+		tmp = tmp + bin_num.substr(start_index, end_index);
+		oct_num = oct_num + bin_to_oct[tmp];
 
 		if (count == 0)
 		{
@@ -84,7 +84,7 @@ void binary_to_octal(const std::string& n)
 	}
 
 
-	std::cout << "\n\nBinary to octal:\n" << ans << std::endl;
+	return oct_num; 
 
 }
 
@@ -96,7 +96,7 @@ int main()
 	std::string user_input;
 	std::cin >> user_input;
         
-        binary_to_octal(user_input);
+        std::cout << "\n\nBinary to octal:\n" << binary_to_octal(user_input) << std::endl;
 
 	return 0;
 

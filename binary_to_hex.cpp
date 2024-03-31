@@ -10,20 +10,20 @@ A program to convert a valid binary number given as input to an equivalent hexad
 #include <map>
 
 
-void binary_to_hex(const std::string& n)
+std::string binary_to_hex(const std::string& bin_num)
 {
 
 	std::map<std::string, std::string> bin_to_hex {{"0000", "0"}, {"0001", "1"}, {"0010", "2"}, {"0011", "3"}, 
 	                                               {"0100", "4"}, {"0101", "5"}, {"0110", "6"}, {"0111", "7"},
                                                        {"1000", "8"}, {"1001", "9"}, {"1010", "A"}, {"1011", "B"},   
                                                        {"1100", "C"}, {"1101", "D"}, {"1110", "E"}, {"1111", "F"}};  
-	std::string ans = "";
+	std::string hex_num = "";
 
-	int no_of_calls = (n.length() / 4) + (n.length() % 4 == 0? 0 : 1);
+	int no_of_calls = (bin_num.length() / 4) + (bin_num.length() % 4 == 0? 0 : 1);
 
 	int start_index = 0;
 
-	int remainder = n.length() % 4;
+	int remainder = bin_num.length() % 4;
 
 	short count = 0;
 
@@ -58,8 +58,8 @@ void binary_to_hex(const std::string& n)
 
 
 
-		tmp = tmp + n.substr(start_index, end_index);
-		ans = ans + bin_to_hex[tmp];
+		tmp = tmp + bin_num.substr(start_index, end_index);
+		hex_num = hex_num + bin_to_hex[tmp];
 
 		if (count == 0)
 		{
@@ -93,7 +93,7 @@ void binary_to_hex(const std::string& n)
 	}
 
 
-	std::cout << "\n\nBinary to Hexadecimal:\n" << ans << std::endl;
+	return hex_num;
 
 }
 
@@ -106,7 +106,7 @@ int main()
 	std::cin >> user_input;
 
 
-	binary_to_hex(user_input);
+	std::cout << "\n\nBinary to Hexadecimal:\n" << binary_to_hex(user_input) << std::endl;
 
 	return 0;
 

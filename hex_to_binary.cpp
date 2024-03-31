@@ -11,7 +11,7 @@ A program to convert a valid hexadecimal number given as input to an equivalent 
 #include <map>
 
 
-void hexadecimal_to_binary(const std::string& bin_num)
+std::string hexadecimal_to_binary(const std::string& hex_num)
 {
 
 	std::map<std::string, std::string> hex_to_bin {{"0", "0000"}, {"1", "0001"}, {"2", "0010"}, {"3", "0011"}, 
@@ -20,18 +20,18 @@ void hexadecimal_to_binary(const std::string& bin_num)
 		                                       {"C", "1100"}, {"D", "1101"}, {"E", "1110"}, {"F", "1111"}};
 		                                       
 
-	int length = bin_num.length();
+	int length = hex_num.length();
 	int cur_pos = 0;
 	bool first_iteration = true;
 
-	std::string hex_num = "";
+	std::string bin_num = "";
 	std::string str = "";
 
 	while (length)
 	{
 
 
-		str = bin_num.substr(cur_pos, 1); 
+		str = hex_num.substr(cur_pos, 1); 
 		str = hex_to_bin[str];
 		cur_pos++;
 
@@ -40,7 +40,7 @@ void hexadecimal_to_binary(const std::string& bin_num)
 			if (str == "0000")
 			{
 				if (length == 1)
-					hex_num = "0";
+					bin_num = "0";
 
 			}
 			else
@@ -48,13 +48,13 @@ void hexadecimal_to_binary(const std::string& bin_num)
 				first_iteration = false;
 
 				if (str == "0001")
-					hex_num = str.substr(3, 1);
+					bin_num = str.substr(3, 1);
 				else if (str == "0010" || str == "0011") 
-					hex_num = str.substr(2, 2);
+					bin_num = str.substr(2, 2);
 				else if (str == "0100" || str == "0101" || str == "0110" || str == "0111")
-					hex_num = str.substr(1,3); 
+					bin_num = str.substr(1,3); 
 				else
-					hex_num = str;	
+					bin_num = str;	
 			}
 
 
@@ -62,14 +62,14 @@ void hexadecimal_to_binary(const std::string& bin_num)
 		else
 		{
 
-			hex_num += str;
+			bin_num += str;
 		}
 
 		--length;
 
 	}
 
-	std::cout << "\nTo Binary:  " << hex_num << "\n\n";
+	return bin_num; 
 }
 
 
@@ -81,7 +81,7 @@ int main()
 	std::string user_input;
 	std::cin >> user_input;
 
-	hexadecimal_to_binary(user_input);
+	std::cout << "\nTo Binary:  " << hexadecimal_to_binary(user_input) << "\n\n";
 
 	return 0;
 }
