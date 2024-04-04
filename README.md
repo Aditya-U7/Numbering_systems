@@ -28,3 +28,7 @@ octal_to_decimal:
 hex_to_octal:
 
 ![Screenshot](hex_to_octal.png)
+
+hex_to_decimal:
+
+![Screenshot](hex_to_decimal.png)
