@@ -36,3 +36,7 @@ hex_to_decimal:
 decimal_to_octal:
 
 ![Screenshot](decimal_to_octal.png)
+
+decimal_to_hex:
+
+![Screenshot](decimal_to_hex.png)
