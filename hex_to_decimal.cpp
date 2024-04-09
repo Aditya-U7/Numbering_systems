@@ -2,7 +2,7 @@
 
 Author: Aditya Upadhye
 
-A program to convert a valid hexadecimal number given as input to an equivalent decimal number using a map.
+A program to convert a valid hexadecimal number given as input to an equivalent decimal number using a map. It correctly works for values from 0 to FFFFFFFF (in decimal: 4294967295).
 
 */
 
