@@ -1,7 +1,7 @@
-This repository contains a collection of different programs written in C, C++, Python.
+This repository contains a collection of number conversion programs.
 
 Sample output of the binary_to_octal:
-
+ 
 ![Screenshot](binary_to_octal.png)
 
 binary_to_hex:
